@@ -1321,6 +1321,30 @@ var quickFinalizeMove = function(soundOkToPlay) {
 };
 
 var finalizeMove = function (moveAnimationBeginStep, ignoreNoEmail, okToUpdateWinInfo) {
+	
+	
+	console.log("in finalize move");
+	let string_move = JSON.stringify(gameController.gameNotation.moves[currentMoveIndex]);
+
+	let make_move_url = "http://localhost:8000/make_move"; 
+
+	const request = new XMLHttpRequest();
+	request.open("POST", make_move_url, false); // `false` makes the request synchronous
+	request.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
+	request.onload = () => {
+		if(request.readyState == 4 && request.status == 200) {
+			console.log("Move made successfully");
+		} else {
+			console.log("error: " + request.status);
+		}
+	};
+
+	request.send(string_move);
+
+	//here make http request for make_move
+
+
+
   	rerunAll(true, moveAnimationBeginStep);
 
   	// Only build url if not onlinePlay

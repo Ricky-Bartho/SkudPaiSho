@@ -22,44 +22,23 @@ SkudAIv1.prototype.setPlayer = function(playerName) {
 
 /* parameters will be copies of the real thing, so you can't mess up the real game. */
 SkudAIv1.prototype.getMove = function(game, moveNum) {
-	this.moveNum = moveNum;
 
-	var moves = this.getPossibleMoves(game, this.player);
+	
+	let get_move_url = "http://localhost:8000/get_move"; 
 
-	// Process moves to get the best one...
-	// What makes a good move? Should I go through all moves and "score" them somehow?
-
-	var goodMove;
-	// var goodScore = 0;
-	var goodScores = new Map();
-	for (var moveNum = 0; moveNum < moves.length; moveNum++) {
-		var move = moves[moveNum];
-		// var score = this.getMoveScore(game, move, this.scoreDepth);
-		// if (score > 9999 || (score > goodScore && Math.random() > 0.1)) {	// Shake it up
-		// //if (score > goodScore) {
-		// 	goodScore = score;
-		// 	goodMove = move;
-		// }
-		var scores = this.getMoveScore(game, move, this.scoreDepth);
-		if (scores.get(this.scoreDepth) > 9999) {
-			return move;
-		}
-		if (Math.random() > 0.1 && this.scoreIsGood(scores, goodScores, this.scoreDepth)) {
-			goodMove = move;
-			goodScores = scores;
-		}
+	const request = new XMLHttpRequest();
+	request.open("GET", get_move_url, false); // `false` makes the request synchronous
+	request.send(null);
+	
+	if (request.status === 200) {
+		var mv = request.responseText;
 	}
 
-	if (goodMove) {
-		// debug("Score: " + goodScore);
-		this.ensurePlant(goodMove, game, this.player);
-		return goodMove;
-	}
-
-	var randomIndex = Math.floor(Math.random() * moves.length);
-	var randomMove = moves.splice(randomIndex, 1)[0];
-
-	return randomMove;
+	console.log("after json");
+	let jsonmv = JSON.parse(JSON.parse(mv));
+	console.log(jsonmv);
+	return jsonmv;
+	
 };
 
 SkudAIv1.prototype.scoreIsGood = function(scores, goodScores, depth) {
