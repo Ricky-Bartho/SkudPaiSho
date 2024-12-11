@@ -24,7 +24,7 @@ SkudAIv1.prototype.setPlayer = function(playerName) {
 SkudAIv1.prototype.getMove = function(game, moveNum) {
 
 	
-	let get_move_url = "http://localhost:8000/get_move"; 
+	let get_move_url = "http://paisho-engine:8000/get_move"; 
 
 	const request = new XMLHttpRequest();
 	request.open("GET", get_move_url, false); // `false` makes the request synchronous

@@ -1326,7 +1326,7 @@ var finalizeMove = function (moveAnimationBeginStep, ignoreNoEmail, okToUpdateWi
 	console.log("in finalize move");
 	let string_move = JSON.stringify(gameController.gameNotation.moves[currentMoveIndex]);
 
-	let make_move_url = "http://localhost:8000/make_move"; 
+	let make_move_url = "http://paisho-engine:8000/make_move"; 
 
 	const request = new XMLHttpRequest();
 	request.open("POST", make_move_url, false); // `false` makes the request synchronous
