@@ -52,7 +52,7 @@ if (shouldRedirectIfNotHttps() && window.location.href.includes("http://")) {
 }
 
 function shouldRedirectIfNotHttps() {
-  return !ios;
+  return ios;
 }
 
 function humanYearsToTreeYears(humanAge) {
