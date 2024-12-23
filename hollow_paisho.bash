@@ -2,7 +2,7 @@
 
 #in images
 cd images
-find . -type d -not -path "*SkudPaiSho*" -not -path "*renamer*" -exec rm -rf {} +
+find . -type d -not -path "*SkudPaiSho*" -not -path "*Ginseng*" -not -path "*renamer*" -exec rm -rf {} +
 cd SkudPaiSho
 find . -type d -not -path "*tgggyatso*" -exec rm -rf {} +
 cd ../../style
