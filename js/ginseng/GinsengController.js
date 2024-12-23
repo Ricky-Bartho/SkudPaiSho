@@ -481,8 +481,8 @@ Ginseng.Controller.prototype.completeMove = function() {
 		if (playingOnlineGame()) {
 			callSubmitMove();
 		} else {
-			// finalizeMove();
-			quickFinalizeMove();
+			finalizeMove();
+			//quickFinalizeMove();
 		}
 	}
 };
@@ -546,15 +546,33 @@ Ginseng.Controller.prototype.getPointMessage = function(htmlPoint) {
 }
 
 Ginseng.Controller.prototype.playAiTurn = function(finalizeMove) {
-	// 
+	if (this.theGame.getWinner()) {
+		return;
+	}
+	var theAi = activeAi;
+	if (activeAi2) {
+		if (activeAi2.player === getCurrentPlayer()) {
+			theAi = activeAi2;
+		}
+	}
+	console.log("about to call get move");
+	var move = theAi.getMove();
+	if (!move) {
+		debug("No move given...");
+		return;
+	}
+	console.log("end of playai");
+	this.gameNotation.addMove(move);
+	finalizeMove(); 
 };
 
 Ginseng.Controller.prototype.startAiGame = function(finalizeMove) {
-	// 
+	console.log("start ai game");
+	this.playAiTurn(finalizeMove);
 };
 
 Ginseng.Controller.prototype.getAiList = function() {
-	return [];
+	return [new GinsengAI()];
 }
 
 Ginseng.Controller.prototype.getCurrentPlayer = function() {

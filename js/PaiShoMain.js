@@ -1316,12 +1316,11 @@ var quickFinalizeMove = function(soundOkToPlay) {
 		soundManager.playSound(SoundManager.sounds.tileLand);
 	}
 
-	refreshMessage();
+	//refreshMessage();
 	showResetMoveMessage();
 };
 
 var finalizeMove = function (moveAnimationBeginStep, ignoreNoEmail, okToUpdateWinInfo) {
-	
 	
 	console.log("in finalize move");
 	let string_move = JSON.stringify(gameController.gameNotation.moves[currentMoveIndex]);
