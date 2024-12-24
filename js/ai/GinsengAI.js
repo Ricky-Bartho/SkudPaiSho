@@ -9,7 +9,7 @@ function GinsengAI() {
 }
 
 GinsengAI.prototype.getName = function() {
-	return "Ginseng Pai Sho automatic opponent";
+	return "Ginseng Pai Sho engine";
 };
 
 GinsengAI.prototype.getMessage = function() {

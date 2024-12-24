@@ -155,6 +155,10 @@ Ginseng.Controller.prototype.getAdditionalMessage = function() {
 		if (onlinePlayEnabled && gameId < 0 && userIsLoggedIn()) {
 			msg += "Click <em>Join Game</em> above to join another player's game. Or, you can start a game that other players can join by clicking <strong>Start Online Game<strong> below.";
 		} else {
+			console.log("in get additional message");
+			var aiList = this.getAiList();
+			msg += "<span class='skipBonus' onclick='setAiIndex(" + "0" + ");'>Play " + aiList[0].getName() + "</span>";
+
 			msg += "Sign in to enable online gameplay. Or, start playing a local game.";
 		}
 
