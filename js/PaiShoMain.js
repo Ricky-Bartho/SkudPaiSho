@@ -1464,7 +1464,7 @@ function linkShortenCallback(shortUrl, ignoreNoEmail, okToUpdateWinInfo) {
 	var messageText = "";
 
 	if ((
-			(!gameController.readyToShowPlayAgainstAiOption && currentMoveIndex == 1) 
+			(!gameController.readyToShowPlayAgainstAiOption/* && currentMoveIndex == 1*/) 
 			|| (gameController.readyToShowPlayAgainstAiOption && gameController.readyToShowPlayAgainstAiOption())
 		) && !haveBothEmails()) {
 		if (!playingOnlineGame() && (currentGameData.gameTypeId === 1 || !currentGameData.gameTypeId)) {
