@@ -727,7 +727,7 @@ Ginseng.applyCaptureAndAbilityActivationRequirementRulesV2 = function(GinsengTil
 			promptTargetTitle: "exchangedTile"
 		};
 		tileInfo.abilities.push(protectFromCaptureWhileInTempleAbility);
-		tileInfo.abilities.push(protectFromAbilitiesWhileInTempleAbility);
+		// tileInfo.abilities.push(protectFromAbilitiesWhileInTempleAbility);
 		// tileInfo.abilities.push(protectFromFriendlyPushAbilitiesWhileInTempleAbility);
 		if (key !== Ginseng.TileCodes.WhiteLotus) {
 			tileInfo.abilities.push(exchangeForCapturedTileIntempleAbility);
