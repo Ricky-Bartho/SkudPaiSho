@@ -7,6 +7,16 @@ Ginseng.Constants = {
 };
 
 Ginseng.Controller = function(gameContainer, isMobile) {
+	let init_board_url = "http://localhost:7777/init"; 
+
+	const request = new XMLHttpRequest();
+	request.open("GET", init_board_url, false); // `false` makes the request synchronous
+	request.send(null);
+	
+	if (request.status === 200) {
+		var mv = request.responseText;
+	}
+
 	new Ginseng.Options();	// Initialize
 	Ginseng.Controller.loadPreferences();
 	this.gameContainer = gameContainer;
