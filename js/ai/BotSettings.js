@@ -54,6 +54,7 @@ function sendSettingsToBot() {
 	})
 	.then((response) => {
 			if (response.ok) {
+					closeModal()
 					alert('Settings saved successfully!');
 			} else {
 					alert('Failed to save settings. Please try again.');
