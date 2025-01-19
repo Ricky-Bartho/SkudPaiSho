@@ -2057,7 +2057,8 @@ function playAiTurn() {
 	  showModal("", "Unable to load.");
   }
   
-function showModal(headingHTMLText, modalMessageHTMLText, onlyCloseByClickingX, yesNoOptions, useInvisibleModal) {
+function showModal(headingHTMLText, modalMessageHTMLText, onlyCloseByClickingX, yesNoOptions, 
+	useInvisibleModal, onRenderedCallback) {
 	// Make sure sidenav is closed
 	closeNav();
 
@@ -2119,6 +2120,11 @@ function showModal(headingHTMLText, modalMessageHTMLText, onlyCloseByClickingX, 
 			closeModal();
 		}
 	};
+
+	// Call the callback once the modal is displayed and content is added
+	if (onRenderedCallback) {
+		onRenderedCallback();
+	}
 }
   
 function closeModal() {
