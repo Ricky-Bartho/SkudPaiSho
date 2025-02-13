@@ -19,6 +19,7 @@ function botSettingsClicked() {
 					document.getElementById('futilInput').checked = settings.futil || false;
 					document.getElementById('nullInput').checked = settings.null || false;
 					document.getElementById('quiesceInput').checked = settings.quiesce || false;
+					document.getElementById('g5Input').checked = settings.quiesce || false;
 			} else {
 					// Clear fields if no settings are saved
 					document.getElementById('depthInput').value = '';
@@ -26,6 +27,8 @@ function botSettingsClicked() {
 					document.getElementById('futilInput').checked = false;
 					document.getElementById('nullInput').checked = false;
 					document.getElementById('quiesceInput').checked = false;
+					document.getElementById('g5Input').checked = false;
+					
 			}
 	});
 }
@@ -38,6 +41,7 @@ function sendSettingsToBot() {
 			futil: document.getElementById('futilInput').checked,
 			null: document.getElementById('nullInput').checked,
 			quiesce: document.getElementById('quiesceInput').checked,
+			g5: document.getElementById('g5Input').checked,
 	};
 
 	// Save settings to localStorage
