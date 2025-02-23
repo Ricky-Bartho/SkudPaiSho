@@ -37,8 +37,6 @@ function sendSettingsToBot() {
 	// Gather input values from the modal
 	const settings = {
 			depth: parseInt(document.getElementById('depthInput').value, 10) || 0,
-			n_threads: parseInt(document.getElementById('threadsInput').value, 10) || 0,
-			futil: document.getElementById('futilInput').checked,
 			null: document.getElementById('nullInput').checked,
 			quiesce: document.getElementById('quiesceInput').checked,
 			g5: document.getElementById('g5Input').checked,
