@@ -19,6 +19,8 @@ Trifle.BrainFactory.prototype.createTriggerBrain = function(abilityTriggerInfo, 
 			return new Trifle.WhileTargetTileIsInZoneTriggerBrain(triggerContext);
 		case Trifle.AbilityTriggerType.whileTargetTileIsInLineOfSight:
 			return new Trifle.WhileTargetTileIsInLineOfSightTriggerBrain(triggerContext);
+		case Trifle.AbilityTriggerType.whileTargetTileIsInLineOfSightIn5:
+			return new Trifle.WhileTargetTileIsInLineOfSightIn5TriggerBrain(triggerContext);
 		case Trifle.AbilityTriggerType.whenTargetTileLandsInZone:
 			return new Trifle.WhenTargetTileLandsInZoneTriggerBrain(triggerContext);
 		case Trifle.AbilityTriggerType.whenTargetTileMovesFromWithinZone:

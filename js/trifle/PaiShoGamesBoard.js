@@ -979,6 +979,59 @@ PaiShoGames.Board.prototype.getPointsNextToTilesInLineOfSight = function(movemen
 	return jumpPoints;
 };
 
+
+PaiShoGames.Board.prototype.getPointsForTilesInLineOfSightIn5 = function(originPoint) {
+	var lineOfSightPoints = [];
+	
+	/* Scan in all directions, if a tile found, add to list */
+	var tileFound = false;
+	var pointsSearched = 0;
+	for (var row = originPoint.row + 1; row <= paiShoBoardMaxRowOrCol && !tileFound && pointsSearched < 5; row++) {
+		var checkPoint = this.cells[row][originPoint.col];
+		if (checkPoint.hasTile()) {
+			tileFound = true;
+			lineOfSightPoints.push(this.cells[row][originPoint.col]);
+		}
+		pointsSearched++;
+	}
+
+	tileFound = false;
+	pointsSearched = 0;
+	for (var row = originPoint.row - 1; row >= 0 && !tileFound && pointsSearched < 5; row--) {
+		var checkPoint = this.cells[row][originPoint.col];
+		if (checkPoint.hasTile()) {
+			tileFound = true;
+			lineOfSightPoints.push(this.cells[row][originPoint.col]);
+		}
+		pointsSearched++;
+	}
+
+	tileFound = false;
+	pointsSearched = 0;
+	for (var col = originPoint.col + 1; col <= paiShoBoardMaxRowOrCol && !tileFound && pointsSearched < 5; col++) {
+		var checkPoint = this.cells[originPoint.row][col];
+		if (checkPoint.hasTile()) {
+			tileFound = true;
+			lineOfSightPoints.push(this.cells[originPoint.row][col]);
+		}
+		pointsSearched++;
+	}
+
+	tileFound = false;
+	pointsSearched = 0;
+	for (var col = originPoint.col - 1; col >= 0 && !tileFound && pointsSearched < 5; col--) {
+		var checkPoint = this.cells[originPoint.row][col];
+		if (checkPoint.hasTile()) {
+			tileFound = true;
+			lineOfSightPoints.push(this.cells[originPoint.row][col]);
+		}
+		pointsSearched++;
+	}
+	
+	return lineOfSightPoints;
+};
+
+
 PaiShoGames.Board.prototype.getPointsForTilesInLineOfSight = function(originPoint) {
 	var lineOfSightPoints = [];
 	

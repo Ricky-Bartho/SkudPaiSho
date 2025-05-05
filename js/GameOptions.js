@@ -17,6 +17,9 @@ var FULL_POINTS_SCORING = "FullPointsScoring";
 /* Vagabond */
 var SWAP_BISON_WITH_LEMUR = "SwapBisonWithLemur";
 
+/* Ginseng */
+var GINSENG_PROTECT_5 = "GinsengProtect5";
+
 /* Blooms */
 var FOUR_SIDED_BOARD = "BoardSize4";	// It's funny because the name is all wrong, but I always think of it in those words
 var SHORTER_GAME = "ShorterGame";
@@ -59,6 +62,7 @@ legacyGameOptionsMap[OPTION_DOUBLE_ACCENT_TILES] = "Double (8) Accent Tiles";
 legacyGameOptionsMap[OPTION_ANCIENT_OASIS_EXPANSION] = "Ancient Oasis Expansion";
 legacyGameOptionsMap[OPTION_INFORMAL_START] = "Informal Start";
 legacyGameOptionsMap[NO_HARMONY_VISUAL_AIDS] = "No Harmony Visual Aids";
+legacyGameOptionsMap[GINSENG_PROTECT_5] = "Ginseng Protect 5";
 legacyGameOptionsMap[OPTION_FULL_TILES] = "Full tile set";
 legacyGameOptionsMap[CLASSIC_RULES] = "Classic Rules";
 legacyGameOptionsMap[FULL_POINTS_SCORING] = "Full points scoring";

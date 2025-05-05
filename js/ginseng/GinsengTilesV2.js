@@ -559,7 +559,7 @@ Ginseng.TileInfo.defineGinsengTilesV2 = function() {
 				type: Trifle.AbilityName.protectFromCapture,
 				triggers: [
 					{
-						triggerType: Trifle.AbilityTriggerType.whileTargetTileIsInLineOfSight,
+						triggerType: gameOptionEnabled(GINSENG_PROTECT_5) ? Trifle.AbilityTriggerType.whileTargetTileIsInLineOfSightIn5 : Trifle.AbilityTriggerType.whileTargetTileIsInLineOfSight,
 						targetTeams: [Trifle.TileTeam.friendly]
 					}
 				],

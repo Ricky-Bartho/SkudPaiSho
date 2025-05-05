@@ -164,6 +164,7 @@ Trifle.AbilityTriggerType = {
 	whenTargetTileLandsInZone: "whenTargetTileLandsInZone",
 	whenTargetTileMovesFromWithinZone: "whenTargetTileMovesFromWithinZone",
 	whileTargetTileIsInLineOfSight: "whileTargetTileIsInLineOfSight",
+	whileTargetTileIsInLineOfSightIn5: "whileTargetTileIsInLineOfSightIn5",
 	whileOutsideTemple: "whileOutsideTemple",	// Todo change to whileTargetTileOutsideTemple?
 	whileInsideTemple: "whileInsideTemple",		// ^
 	whileTargetTileIsOnBoard: "whileTargetTileIsOnBoard",
