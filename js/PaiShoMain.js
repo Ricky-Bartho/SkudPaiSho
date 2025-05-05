@@ -4483,9 +4483,7 @@ function showGiveawayDrawingModal() {
   
   function getGameOptionsMessageHtml(options) {
 	  var msg = "<br /><br />";
-	  console.log("IN get game options message html");
-	  console.log("options length:" + options.length);
-	  console.log("options:" + options);
+  
 	  var optionsListed = false;
 	  if (options && options.length > 0) {
 		  msg += "<strong>Add Game Option:</strong><br />";
