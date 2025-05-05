@@ -375,7 +375,7 @@ var createNonRankedGamePreferredKey = "createNonRankedGamePreferred";
 		  url = "https://skudpaisho.com/";
 	  }
   
-	  if ((url.startsWith("file") && !ios && !runningOnAndroid) || url.indexOf("localhost") > -1 || url.indexOf("127.0.0.1") > -1) {
+	  if (url.startsWith("file") && !ios && !runningOnAndroid) {
 		  onlinePlayEnabled = false;
 	  }
   
