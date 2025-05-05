@@ -7,7 +7,8 @@ Ginseng.Constants = {
 };
 
 Ginseng.Controller = function(gameContainer, isMobile) {
-	let init_board_url = "http://localhost:7777/init"; 
+	let init_board_url = "http://localhost:7777/init";
+	let settings_url = "http://localhost:7777/settings";
 
 	const request = new XMLHttpRequest();
 	request.open("GET", init_board_url, false); // `false` makes the request synchronous
@@ -39,6 +40,14 @@ Ginseng.Controller = function(gameContainer, isMobile) {
 
 	if (gameOptionEnabled(GINSENG_1_POINT_0)) {
 		this.isInviteOnly = true;
+	}
+	
+	if(gameOptionEnabled(GINSENG_GP5)) {
+		console.log("G5 enabled");
+		const request = new XMLHttpRequest();
+		request.open("POST", settings_url, false); // `false` makes the request synchronous
+		request.setRequestHeader('Content-type', 'application/json');
+		request.send(JSON.stringify({"g5": true, "depth": 5, "null": false, "quiesce": false}));
 	}
 }
 
