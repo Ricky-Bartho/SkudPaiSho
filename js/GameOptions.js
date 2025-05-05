@@ -62,7 +62,7 @@ legacyGameOptionsMap[OPTION_DOUBLE_ACCENT_TILES] = "Double (8) Accent Tiles";
 legacyGameOptionsMap[OPTION_ANCIENT_OASIS_EXPANSION] = "Ancient Oasis Expansion";
 legacyGameOptionsMap[OPTION_INFORMAL_START] = "Informal Start";
 legacyGameOptionsMap[NO_HARMONY_VISUAL_AIDS] = "No Harmony Visual Aids";
-legacyGameOptionsMap[GINSENG_PROTECT_5] = "Ginseng Protect 5";
+legacyGameOptionsMap[GINSENG_PROTECT_5] = "FAKE Ginseng Protect 5";
 legacyGameOptionsMap[OPTION_FULL_TILES] = "Full tile set";
 legacyGameOptionsMap[CLASSIC_RULES] = "Classic Rules";
 legacyGameOptionsMap[FULL_POINTS_SCORING] = "Full points scoring";
@@ -167,6 +167,10 @@ var HEXHEX_10 = "Hexhex10Board";
 gameOptionDescriptions[HEXHEX_10] = "Board size: 10 per side";
 
 /* Ginseng */
+
+var GINSENG_GP5 = "GinsengProtect5";
+gameOptionDescriptions[GINSENG_GP5] = "Ginseng Protect 5";
+
 var CAPTURE_ABILITY_TARGET_1 = "CaptureAbilityTarget1";
 gameOptionDescriptions[CAPTURE_ABILITY_TARGET_1] = "Lion Turtle and Dragon Capture Limit 1";
 

@@ -2488,7 +2488,8 @@ var GameType = {
 		coverImg: "ginseng.png",
 		rulesUrl: "https://skudpaisho.com/site/games/ginseng-pai-sho/",
 		gameOptions: [
-			GINSENG_PROTECT_5
+			//GINSENG_PROTECT_5,
+			GINSENG_GP5
 		],
 		secretGameOptions: [
 			LION_TURTLE_ABILITY_ANYWHERE,
