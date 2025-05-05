@@ -172,7 +172,7 @@ Ginseng.Controller.prototype.getAdditionalMessage = function() {
 			msg += "Sign in to enable online gameplay. Or, start playing a local game.";
 		}
 
-		//msg += getGameOptionsMessageHtml(GameType.Ginseng.gameOptions);
+		msg += getGameOptionsMessageHtml(GameType.Ginseng.gameOptions);
 	} else if (!this.theGame.hasEnded() && myTurn()) {
 		if (this.gameNotation.lastMoveHasDrawOffer() && this.promptToAcceptDraw) {
 			msg += "<br />Are you sure you want to accept the draw offer and end the game?<br />";
@@ -192,7 +192,7 @@ Ginseng.Controller.prototype.getAdditionalMessage = function() {
 	}
 
 	if (!playingOnlineGame()) {
-		msg += getGameOptionsMessageHtml(GameType.Ginseng.gameOptions);	// For when there are game options
+		// msg += getGameOptionsMessageHtml(GameType.Ginseng.gameOptions);	// For when there are game options
 		if (onlinePlayEnabled && this.gameNotBegun()) {
 			msg += "<br /><span class='skipBonus' onClick='gameController.startOnlineGame()'>Start Online Game</span><br />";
 		}
