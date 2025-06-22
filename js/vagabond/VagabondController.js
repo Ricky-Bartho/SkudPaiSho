@@ -14,6 +14,15 @@ function VagabondController(gameContainer, isMobile) {
 		localStorage.setItem(vagabondTileDesignTypeKey, "tggvagabond");
 	}
 
+	let init_board_url = "http://localhost:7777/init";
+	const request = new XMLHttpRequest();
+	request.open("GET", init_board_url, false); // `false` makes the request synchronous
+	request.send(null);
+	
+	if (request.status === 200) {
+		var mv = request.responseText;
+	}
+
 	VagabondController.loadPreferences();
 
 	this.actuator = new VagabondActuator(gameContainer, isMobile, this.isAnimationsEnabled());
@@ -135,6 +144,9 @@ VagabondController.prototype.getAdditionalMessage = function() {
 		if (onlinePlayEnabled && gameId < 0 && userIsLoggedIn()) {
 			msg += "Click <em>Join Game</em> above to join another player's game. Or, you can start a game that other players can join by making a move. <br />";
 		} else {
+			var aiList = this.getAiList();
+			msg += "<span class='skipBonus' onclick='setAiIndex(" + "0" + ");'>Play " + aiList[0].getName() + "</span>";
+			
 			msg += "Sign in to enable online gameplay. Or, start playing a local game by making a move.";
 		}
 
@@ -488,7 +500,7 @@ VagabondController.prototype.startAiGame = function(finalizeMove) {
 };
 
 VagabondController.prototype.getAiList = function() {
-	return [new VagabondRandomAIv1()];
+	return [new VagabondAI()];
 }
 
 VagabondController.prototype.getCurrentPlayer = function() {
