@@ -1703,9 +1703,11 @@ PaiShoGames.Board.prototype.getMovementExtendedDistance = function(boardPointSta
 
 PaiShoGames.Board.prototype.setPossibleMovesForMovement = function(temp_movementInfo, boardPointStart) {
 	this.movementPointChecks = 0;
-
-	var movementInfo_str = JSON.stringify(temp_movementInfo);
-	var movementInfo = JSON.parse(movementInfo_str);
+	
+	var movementInfo = Object.assign({}, temp_movementInfo);
+	//var movementInfo_str = JSON.stringify(temp_movementInfo);
+	//console.log(movementInfo_str);
+	//var movementInfo = JSON.parse(movementInfo_str);
 	var extended_dist = this.getMovementExtendedDistance(boardPointStart, movementInfo)
 	var movementDistance = movementInfo.distance + extended_dist;
 	if (extended_dist > 0 && gameOptionEnabled(GINSENG_BISON_JUMP)) {
