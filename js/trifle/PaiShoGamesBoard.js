@@ -1697,12 +1697,23 @@ PaiShoGames.Board.prototype.getMovementExtendedDistance = function(boardPointSta
 			extendDistance += extendAbility.abilityInfo.extendDistance;
 		}
 	});
+	console.log("Extend Distance: " + extendDistance);
 	return extendDistance;
 };
 
-PaiShoGames.Board.prototype.setPossibleMovesForMovement = function(movementInfo, boardPointStart) {
+PaiShoGames.Board.prototype.setPossibleMovesForMovement = function(temp_movementInfo, boardPointStart) {
 	this.movementPointChecks = 0;
-	var movementDistance = movementInfo.distance + this.getMovementExtendedDistance(boardPointStart, movementInfo);
+
+	var movementInfo_str = JSON.stringify(temp_movementInfo);
+	var movementInfo = JSON.parse(movementInfo_str);
+	var extended_dist = this.getMovementExtendedDistance(boardPointStart, movementInfo)
+	var movementDistance = movementInfo.distance + extended_dist;
+	if (extended_dist > 0 && gameOptionEnabled(GINSENG_BISON_JUMP)) {
+		//If we are next to a red bison, We can now jump over all pieces
+		console.log("extending distance, so giving jump over ability, ONLY SHOULD BE USED IN GINSENG");
+		movementInfo.abilities = [{type: Trifle.MovementAbility.jumpOver}];
+	}
+	debug(movementInfo)
 
 	var isImmobilized = this.tileMovementIsImmobilized(boardPointStart.tile, movementInfo, boardPointStart);
 	if (!isImmobilized) {
