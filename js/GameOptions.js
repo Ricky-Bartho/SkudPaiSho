@@ -19,6 +19,7 @@ var SWAP_BISON_WITH_LEMUR = "SwapBisonWithLemur";
 
 /* Ginseng */
 var GINSENG_PROTECT_5 = "GinsengProtect5";
+var BISON_JUMP_LEG = "GinsegnBisonJumpLeg";	// This is a legacy name, but it is still used in the game
 
 /* Blooms */
 var FOUR_SIDED_BOARD = "BoardSize4";	// It's funny because the name is all wrong, but I always think of it in those words
@@ -63,6 +64,7 @@ legacyGameOptionsMap[OPTION_ANCIENT_OASIS_EXPANSION] = "Ancient Oasis Expansion"
 legacyGameOptionsMap[OPTION_INFORMAL_START] = "Informal Start";
 legacyGameOptionsMap[NO_HARMONY_VISUAL_AIDS] = "No Harmony Visual Aids";
 legacyGameOptionsMap[GINSENG_PROTECT_5] = "FAKE Ginseng Protect 5";
+legacyGameOptionsMap[BISON_JUMP_LEG] = "FAKE Ginseng bison jump leg";	// This is a legacy name, but it is still used in the game
 legacyGameOptionsMap[OPTION_FULL_TILES] = "Full tile set";
 legacyGameOptionsMap[CLASSIC_RULES] = "Classic Rules";
 legacyGameOptionsMap[FULL_POINTS_SCORING] = "Full points scoring";
@@ -170,6 +172,9 @@ gameOptionDescriptions[HEXHEX_10] = "Board size: 10 per side";
 
 var GINSENG_GP5 = "GinsengProtect5";
 gameOptionDescriptions[GINSENG_GP5] = "Ginseng Protect 5";
+
+var GINSENG_BISON_JUMP = "GinsengBisonJump";
+gameOptionDescriptions[GINSENG_BISON_JUMP] = "Ginseng Bison Jump";
 
 var CAPTURE_ABILITY_TARGET_1 = "CaptureAbilityTarget1";
 gameOptionDescriptions[CAPTURE_ABILITY_TARGET_1] = "Lion Turtle and Dragon Capture Limit 1";

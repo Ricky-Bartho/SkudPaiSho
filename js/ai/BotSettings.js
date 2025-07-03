@@ -15,19 +15,13 @@ function botSettingsClicked() {
 
 					// Populate the input fields with saved values
 					document.getElementById('depthInput').value = settings.depth || '';
-					document.getElementById('threadsInput').value = settings.n_threads || '';
-					document.getElementById('futilInput').checked = settings.futil || false;
 					document.getElementById('nullInput').checked = settings.null || false;
 					document.getElementById('quiesceInput').checked = settings.quiesce || false;
-					document.getElementById('g5Input').checked = settings.quiesce || false;
 			} else {
 					// Clear fields if no settings are saved
 					document.getElementById('depthInput').value = '';
-					document.getElementById('threadsInput').value = '';
-					document.getElementById('futilInput').checked = false;
 					document.getElementById('nullInput').checked = false;
 					document.getElementById('quiesceInput').checked = false;
-					document.getElementById('g5Input').checked = false;
 					
 			}
 	});
@@ -39,7 +33,6 @@ function sendSettingsToBot() {
 			depth: parseInt(document.getElementById('depthInput').value, 10) || 0,
 			null: document.getElementById('nullInput').checked,
 			quiesce: document.getElementById('quiesceInput').checked,
-			g5: document.getElementById('g5Input').checked,
 	};
 
 	// Save settings to localStorage

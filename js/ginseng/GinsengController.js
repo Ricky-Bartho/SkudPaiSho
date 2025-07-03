@@ -41,7 +41,15 @@ Ginseng.Controller = function(gameContainer, isMobile) {
 	if (gameOptionEnabled(GINSENG_1_POINT_0)) {
 		this.isInviteOnly = true;
 	}
+	let gp5 = gameOptionEnabled(GINSENG_GP5)
+	let bison_jump = gameOptionEnabled(GINSENG_BISON_JUMP);
+
+	const set_request = new XMLHttpRequest();
+	set_request.open("POST", settings_url, false); // `false` makes the request synchronous
+	set_request.setRequestHeader('Content-type', 'application/json');
+	set_request.send(JSON.stringify({"g5": gp5, "bison_jump": bison_jump, "depth": 5, "null": false, "quiesce": false}));
 	
+	/*
 	if(gameOptionEnabled(GINSENG_GP5)) {
 		console.log("G5 enabled");
 		const request = new XMLHttpRequest();
@@ -49,6 +57,8 @@ Ginseng.Controller = function(gameContainer, isMobile) {
 		request.setRequestHeader('Content-type', 'application/json');
 		request.send(JSON.stringify({"g5": true, "depth": 5, "null": false, "quiesce": false}));
 	}
+	*/
+
 }
 
 Ginseng.Controller.loadPreferences = function() {
